@@ -1,6 +1,6 @@
 package chapter1
 
-import chapter1.Problem5.isOneEditDistanceAwayFrom
+import chapter1.Problem5.oneEditAway
 import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -53,7 +53,7 @@ class Problem5Tests {
     }
 
     private fun handleTest(inputString1: String, inputString2: String, expectedOutput: Boolean){
-        if (expectedOutput) assertTrue(inputString1.isOneEditDistanceAwayFrom(inputString2))
-        else assertFalse(inputString1.isOneEditDistanceAwayFrom(inputString2))
+        if (expectedOutput) assertTrue(oneEditAway(inputString1, inputString2))
+        else assertFalse(oneEditAway(inputString1, inputString2))
     }
 }

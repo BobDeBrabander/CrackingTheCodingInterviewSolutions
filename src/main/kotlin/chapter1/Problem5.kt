@@ -4,43 +4,34 @@ import kotlin.math.abs
 
 object Problem5 {
 
-    fun String.isOneEditDistanceAwayFrom(other: String): Boolean {
-        if (abs(this.length - other.length) > 1) return false
-        var thisI = 0
-        var otherI = 0
-        var dist = 0
-        while (thisI < this.length || otherI < other.length && dist <= 1) {
+    fun oneEditAway(string1: String, string2: String): Boolean {
+        if (abs(string1.length - string2.length) > 1) return false
+        var i1 = 0
+        var i2 = 0
+        var diffFound = false
+        val s1 = if (string1.length < string2.length) string1 else string2
+        val s2 = if (string1.length < string2.length) string2 else string1
+        //Now s1 is the shorter string is they are different length
+
+        while (i1 < s1.length && i2 < s2.length) {
             when {
-                (thisI > this.lastIndex) -> { //ADDITION/REMOVAL
-                    otherI++
-                    dist++
+                s1[i1] == s2[i2] -> {
+                    i1++
+                    i2++
                 }
-                (otherI > other.lastIndex) -> { //ADDITION/REMOVAL
-                    thisI++
-                    dist++
+                diffFound -> return false
+                s1.length == s2.length -> {
+                    diffFound = true
+                    i1++
+                    i2++
                 }
-                (this[thisI] == other[otherI]) -> {
-                    thisI++
-                    otherI++
+                else -> {
+                    //move only the longer index
+                    diffFound = true
+                    i2++
                 }
-                (thisI + 1 < this.length && this[thisI+1] == other[otherI]) -> { //ADDITION/REMOVAL
-                    dist++
-                    thisI+=2
-                    otherI++
-                }
-                (otherI + 1 < other.length && this[thisI] == other[otherI+1]) -> { //ADDITION/REMOVAL
-                    dist++
-                    thisI++
-                    otherI+=2
-                }
-                (thisI + 1 < this.length && otherI + 1 < other.length && this[thisI+1] == other[otherI+1]) -> { //REPLACEMENT
-                    dist++
-                    thisI+=2
-                    otherI+=2
-                }
-                else -> return false
             }
         }
-        return dist <= 1
+        return true
     }
 }
