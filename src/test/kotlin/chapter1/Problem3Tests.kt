@@ -27,6 +27,6 @@ class Problem3Tests {
     }
 
     fun handleTestCase(inputString: String, inputLength: Int, expectedOutput: String){
-        assertEquals(URLify(inputString, inputLength), expectedOutput)
+        assertEquals(URLify(inputString.toMutableList(), inputLength), expectedOutput.toMutableList())
     }
 }
