@@ -7,32 +7,32 @@ import kotlin.test.assertTrue
 class Problem1Tests {
 
     @Test
-    fun `happy flow test 1`() {
+    fun `String with unique characters test 1`() {
         handleTestCase("abcdefg", true)
     }
 
     @Test
-    fun `happy flow test 2`() {
+    fun `String with unique characters test 2`() {
         handleTestCase("abcdefg@#$%.!", true)
     }
 
     @Test
-    fun `happy flow edge case`() {
+    fun `String with unique characters edge case`() {
         handleTestCase("", true)
     }
 
     @Test
-    fun `unhappy flow test 1`() {
+    fun `String with duplicate characters test 1`() {
         handleTestCase("abcdefga", false)
     }
 
     @Test
-    fun `unhappy flow test 2`() {
+    fun `String with duplicate characters test 2`() {
         handleTestCase("abcdefga$%$", false)
     }
 
     @Test
-    fun `unhappy flow test 3`() {
+    fun `tring with duplicate characters test 3`() {
         handleTestCase("aabcdefga$%$", false)
     }
 

@@ -8,22 +8,22 @@ import kotlin.test.assertTrue
 class Problem2Tests {
 
     @Test
-    fun `happy flow test 1`(){
+    fun `Strings that are permutations of each other test 1`(){
         handleTestCase("aba", "aab", true)
     }
 
     @Test
-    fun `happy flow test 2`(){
+    fun `Strings that are permutations of each other test 2`(){
         handleTestCase("abb", "bab", true)
     }
 
     @Test
-    fun `unhappy flow test 1`(){
+    fun `Strings that are not permutations of each other test 1`(){
         handleTestCase("aab", "bab", false)
     }
 
     @Test
-    fun `unhappy flow test 2`(){
+    fun `Strings that are not permutations of each other test 2`(){
         handleTestCase("bbb", "bab", false)
     }
 
