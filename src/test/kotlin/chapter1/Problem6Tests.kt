@@ -13,7 +13,7 @@ class Problem6Tests {
 
     @Test
     fun `return compressed variant case 1`(){
-        handleTestCase("aaaabbbcc", "a4b4c2")
+        handleTestCase("aaaabbbcc", "a4b3c2")
     }
 
     @Test
