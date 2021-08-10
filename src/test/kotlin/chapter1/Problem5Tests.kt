@@ -42,6 +42,16 @@ class Problem5Tests {
         handleTest("pale", "le", false)
     }
 
+    @Test
+    fun `more than 1 edit away test 2`(){
+        handleTest("pale", "leap", false)
+    }
+
+    @Test
+    fun `more than 1 edit away test 3`(){
+        handleTest("pale", "pael", false)
+    }
+
     private fun handleTest(inputString1: String, inputString2: String, expectedOutput: Boolean){
         if (expectedOutput) assertTrue(inputString1.isOneEditDistanceAwayFrom(inputString2))
         else assertFalse(inputString1.isOneEditDistanceAwayFrom(inputString2))
