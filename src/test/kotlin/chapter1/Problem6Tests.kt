@@ -26,6 +26,16 @@ class Problem6Tests {
         handleTestCase("aabbcc", "aabbcc")
     }
 
+    @Test
+    fun `edge case 1`(){
+        handleTestCase("", "")
+    }
+
+    @Test
+    fun `edge case 2`(){
+        handleTestCase("a", "a")
+    }
+
     fun handleTestCase(inputString: String, expectedOutput: String){
         assertEquals(expectedOutput, compressString(inputString))
     }
