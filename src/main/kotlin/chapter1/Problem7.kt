@@ -6,7 +6,7 @@ object Problem7 {
 
     fun Matrix.rotateMatrix() {
         for (i in 0..((size - 1) / 2)) {
-            for (j in i..((size - 1) / 2)) {
+            for (j in i..(size - 2 - i)) {
                 val cell1 = CellIndex(i, j)
                 val cell2 = cell1.get90Cell(size)
                 val cell3 = cell2.get90Cell(size)
