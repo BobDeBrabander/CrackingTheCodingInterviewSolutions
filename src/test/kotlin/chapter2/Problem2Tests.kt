@@ -1,6 +1,7 @@
 package chapter2
 
 import chapter2.Problem2.kthToLast
+import chapter2.Problem2.kthToLastWithoutSize
 import mydatastructures.MySinglyLinkedList
 import org.junit.Test
 import kotlin.test.assertEquals
@@ -19,6 +20,7 @@ class Problem2Tests {
     }
 
     fun handleTest(ll: MySinglyLinkedList<Int>, k: Int, expectedOut: Int){
-        assertEquals(ll.kthToLast(k).value, expectedOut)
+        assertEquals(ll.kthToLast(k)?.value, expectedOut)
+        assertEquals(ll.kthToLastWithoutSize(k)?.value, expectedOut)
     }
 }
