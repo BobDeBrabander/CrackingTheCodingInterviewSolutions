@@ -3,7 +3,7 @@ package mydatastructures
 import java.lang.IllegalStateException
 import java.lang.IndexOutOfBoundsException
 
-class MyLinkedList <T: Any?>{
+class MyDoublyLinkedList <T: Any?>{
     var head: Node<T>? = null
     var tail: Node<T>? = null
     private var size : Int = 0

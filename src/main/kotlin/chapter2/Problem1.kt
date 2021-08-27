@@ -1,10 +1,10 @@
 package chapter2
 
-import mydatastructures.MyLinkedList
+import mydatastructures.MyDoublyLinkedList
 
 object Problem1 {
 
-    fun MyLinkedList<Int>.removeDuplicates() : MyLinkedList<Int>{
+    fun MyDoublyLinkedList<Int>.removeDuplicates() : MyDoublyLinkedList<Int>{
         val seen = HashSet<Int>()
         var curr = this.head
         while(curr?.value != null){
