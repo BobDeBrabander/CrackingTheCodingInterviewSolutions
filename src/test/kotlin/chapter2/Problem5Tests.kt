@@ -85,6 +85,12 @@ class Problem5Tests {
     }
 
     private fun handleTestCaseBackwards(ll1: MySinglyLinkedList<Int>, ll2: MySinglyLinkedList<Int>, expect: MySinglyLinkedList<Int>){
-        assertEquals(sumListsBackwards(ll1, ll2).toList(), expect.toList())
+        var headOut : MySinglyLinkedList.Node<Int>? = sumListsBackwards(ll1, ll2)
+        var headExp = expect.head
+        while (headOut != null && headExp != null){
+            assertEquals(headExp.value, headOut.value)
+            headExp = headExp.next
+            headOut = headOut.next
+        }
     }
 }
