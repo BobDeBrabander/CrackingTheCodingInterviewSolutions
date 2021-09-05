@@ -1,6 +1,5 @@
 package chapter2
 
-import chapter2.Problem7.findIntersection
 import chapter2.Problem8.findStartLoop
 import mydatastructures.MySinglyLinkedList
 import org.junit.Test
@@ -9,7 +8,7 @@ import kotlin.test.assertEquals
 class Problem8Tests {
 
     @Test
-    fun `intersection found test same length`(){
+    fun `intersection found test same length`() {
         val nodeA = MySinglyLinkedList.Node('A')
         val nodeB = MySinglyLinkedList.Node('B')
         val nodeC = MySinglyLinkedList.Node('C')
@@ -24,7 +23,7 @@ class Problem8Tests {
         handleTestCase(nodeA, nodeC)
     }
 
-    private fun handleTestCase(ll1: MySinglyLinkedList.Node<Char>, expect: MySinglyLinkedList.Node<Char>){
+    private fun handleTestCase(ll1: MySinglyLinkedList.Node<Char>, expect: MySinglyLinkedList.Node<Char>) {
         assertEquals(findStartLoop(ll1), expect)
     }
 
