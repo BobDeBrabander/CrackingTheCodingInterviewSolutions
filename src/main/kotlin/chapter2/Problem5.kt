@@ -11,7 +11,7 @@ object Problem5 {
         var takeOver = 0
         while(cur1 != null || cur2 != null){
             val totalValue = (cur1?.value ?: 0) + (cur2?.value ?: 0) + takeOver
-            takeOver = if (totalValue > 10) 1 else 0
+            takeOver = if (totalValue >= 10) 1 else 0
             val value = if (totalValue >= 10) totalValue - 10 else totalValue
             output.add(value)
             if (cur1 != null) cur1 = cur1.next
@@ -19,5 +19,9 @@ object Problem5 {
         }
         if (takeOver != 0) output.add(takeOver)
         return output
+    }
+
+    fun sumListsBackwards(ll1: MySinglyLinkedList<Int>, ll2: MySinglyLinkedList<Int>) : MySinglyLinkedList<Int> {
+        throw NotImplementedError()
     }
 }
