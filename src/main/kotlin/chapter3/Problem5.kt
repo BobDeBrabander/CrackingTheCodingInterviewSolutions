@@ -2,6 +2,7 @@ package chapter3
 
 import java.util.Stack
 import kotlin.math.max
+import kotlin.math.min
 
 object Problem5 {
 
@@ -33,5 +34,44 @@ object Problem5 {
             biggest = Int.MIN_VALUE
         }
         return this
+    }
+
+    fun Stack<Int>.fastSort() : Stack<Int> {
+        var tempStack = Stack<Int>()
+        val runs = this.size
+
+        var left = this.size + 1
+        var biggest : Int? = null
+        var biggestToQueue: Int? = null
+        repeat(runs){ runNum ->
+            if (runNum % 2 == 0) {
+                biggest = this.biggestFromTop(min(left, this.size), biggest, tempStack)
+                if (biggestToQueue != null) {
+                    this.push(biggestToQueue)
+                    biggestToQueue = null
+                }
+                this.push(biggest)
+            } else {
+                biggest = tempStack.biggestFromTop(tempStack.size, biggest, this)
+                biggestToQueue = biggest
+            }
+            left--
+        }
+        return this
+    }
+
+    fun Stack<Int>.biggestFromTop(top: Int, skipValue: Int?, otherStack: Stack<Int>) : Int{
+        var biggest = Int.MIN_VALUE
+        var skipped = skipValue == null
+        repeat(top){
+            val value = this.pop()
+            if (value == skipValue && !skipped) {
+                skipped = true
+            } else {
+                biggest = max(biggest, value)
+                otherStack.push(value)
+            }
+        }
+        return biggest
     }
 }

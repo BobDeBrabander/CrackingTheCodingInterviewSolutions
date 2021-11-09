@@ -1,5 +1,6 @@
 package chapter3
 
+import chapter3.Problem5.fastSort
 import org.junit.Test
 import java.util.Stack
 import kotlin.test.assertEquals
@@ -57,7 +58,8 @@ class Problem5Tests {
     }
 
     private fun handleTestCase(input: Stack<Int>, expect: Stack<Int>) {
-        assertEquals(input.sort(), expect)
+        assertEquals(expect, input.sort())
+        assertEquals(expect, input.fastSort())
     }
 
 }
