@@ -36,6 +36,24 @@ object Problem5 {
         return this
     }
 
+
+    fun Stack<Int>.smartSort() : Stack<Int> {
+        var tempStack = Stack<Int>()
+        while(this.isNotEmpty()){
+            var tmp = this.pop()
+            while(tempStack.isNotEmpty() && tempStack.peek() > tmp){
+                this.push(tempStack.pop())
+            }
+            tempStack.push(tmp)
+        }
+
+        while(tempStack.isNotEmpty()) {
+            this.push(tempStack.pop())
+        }
+        return this
+    }
+
+
     fun Stack<Int>.fastSort() : Stack<Int> {
         var tempStack = Stack<Int>()
         val runs = this.size
