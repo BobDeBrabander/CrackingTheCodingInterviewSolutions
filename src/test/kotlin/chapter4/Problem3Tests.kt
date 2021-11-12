@@ -7,38 +7,38 @@ class Problem3Tests {
 
     @Test
     fun `Testing implementation`(){
-        val binarySearchTree = Problem3.BinarySearchTree()
-        val root = Problem3.BinarySearchNode(1, 1)
+        val binarySearchTree = Problem3.BinaryTree()
+        val root = Problem3.BinaryTreeNode(1, 1)
         binarySearchTree.root = root
 
-        val left = Problem3.BinarySearchNode(2, 2)
-        val right = Problem3.BinarySearchNode(3, 2)
+        val left = Problem3.BinaryTreeNode(2, 2)
+        val right = Problem3.BinaryTreeNode(3, 2)
         root.leftChild = left
         root.rightChild = right
 
-        val leftLeft = Problem3.BinarySearchNode(4, 3)
-        val leftRight = Problem3.BinarySearchNode(5, 3)
+        val leftLeft = Problem3.BinaryTreeNode(4, 3)
+        val leftRight = Problem3.BinaryTreeNode(5, 3)
         left.leftChild = leftLeft
         left.rightChild = leftRight
-        val rightLeft = Problem3.BinarySearchNode(6, 3)
-        val rightRight = Problem3.BinarySearchNode(7, 3)
+        val rightLeft = Problem3.BinaryTreeNode(6, 3)
+        val rightRight = Problem3.BinaryTreeNode(7, 3)
         right.leftChild = rightLeft
         right.rightChild = rightRight
 
-        val leftLeftLeft = Problem3.BinarySearchNode(8, 4)
-        val leftLeftRight = Problem3.BinarySearchNode(9, 4)
+        val leftLeftLeft = Problem3.BinaryTreeNode(8, 4)
+        val leftLeftRight = Problem3.BinaryTreeNode(9, 4)
         leftLeft.leftChild = leftLeftLeft
         leftLeft.rightChild = leftLeftRight
-        val leftRightLeft = Problem3.BinarySearchNode(10, 4)
-        val leftRightRight = Problem3.BinarySearchNode(11, 4)
+        val leftRightLeft = Problem3.BinaryTreeNode(10, 4)
+        val leftRightRight = Problem3.BinaryTreeNode(11, 4)
         leftRight.leftChild = leftRightLeft
         leftRight.rightChild = leftRightRight
-        val rightLeftLeft = Problem3.BinarySearchNode(12, 4)
-        val rightLeftRight = Problem3.BinarySearchNode(13, 4)
+        val rightLeftLeft = Problem3.BinaryTreeNode(12, 4)
+        val rightLeftRight = Problem3.BinaryTreeNode(13, 4)
         rightLeft.leftChild = rightLeftLeft
         rightLeft.rightChild = rightLeftRight
-        val rightRightLeft = Problem3.BinarySearchNode(14, 4)
-        val rightRightRight = Problem3.BinarySearchNode(15, 4)
+        val rightRightLeft = Problem3.BinaryTreeNode(14, 4)
+        val rightRightRight = Problem3.BinaryTreeNode(15, 4)
         rightRight.leftChild = rightRightLeft
         rightRight.rightChild = rightRightRight
 

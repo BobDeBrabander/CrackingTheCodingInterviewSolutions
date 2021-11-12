@@ -5,8 +5,8 @@ import kotlin.math.max
 
 object Problem3 {
 
-    class BinarySearchTree {
-        var root: BinarySearchNode? = null
+    class BinaryTree {
+        var root: BinaryTreeNode? = null
 
         fun height() = root?.maxDepth() ?: 0
 
@@ -17,10 +17,10 @@ object Problem3 {
         }
     }
 
-    class BinarySearchNode(val data: Int, val depth: Int) {
-        var parent: BinarySearchNode? = null
-        var leftChild: BinarySearchNode? = null
-        var rightChild: BinarySearchNode? = null
+    class BinaryTreeNode(val data: Int, val depth: Int) {
+        var parent: BinaryTreeNode? = null
+        var leftChild: BinaryTreeNode? = null
+        var rightChild: BinaryTreeNode? = null
 
         fun maxDepth(): Int {
             if (leftChild == null && rightChild == null) return depth
