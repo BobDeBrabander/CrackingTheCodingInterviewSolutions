@@ -7,7 +7,7 @@ import kotlin.test.assertTrue
 class Problem4Tests {
 
     @Test
-    fun `balanced tree`(){
+    fun `balanced tree`() {
         val binaryTree = Problem4.BinaryTree()
         val root = Problem4.BinaryTreeNode(1, 1)
         binaryTree.root = root
@@ -43,7 +43,7 @@ class Problem4Tests {
     }
 
     @Test
-    fun `unbalanced tree`(){
+    fun `unbalanced tree`() {
         val binaryTree = Problem4.BinaryTree()
         val root = Problem4.BinaryTreeNode(1, 1)
         binaryTree.root = root
@@ -58,7 +58,7 @@ class Problem4Tests {
     }
 
     @Test
-    fun `balanced tree small`(){
+    fun `balanced tree small`() {
         val binaryTree = Problem4.BinaryTree()
         val root = Problem4.BinaryTreeNode(1, 1)
         binaryTree.root = root
@@ -69,7 +69,7 @@ class Problem4Tests {
     }
 
     @Test
-    fun `balanced tree only root`(){
+    fun `balanced tree only root`() {
         val binaryTree = Problem4.BinaryTree()
         val root = Problem4.BinaryTreeNode(1, 1)
         binaryTree.root = root

@@ -2,14 +2,12 @@ package chapter4
 
 import org.junit.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFalse
 import kotlin.test.assertNull
-import kotlin.test.assertTrue
 
 class Problem8Tests {
 
     @Test
-    fun `Big test going over multiple cases`(){
+    fun `Big test going over multiple cases`() {
         val binaryTree = Problem8.BinaryTree()
         val root = Problem8.BinaryTreeNode(1, 1)
         binaryTree.root = root

@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 class Problem3Tests {
 
     @Test
-    fun `Testing implementation`(){
+    fun `Testing implementation`() {
         val binarySearchTree = Problem3.BinaryTree()
         val root = Problem3.BinaryTreeNode(1, 1)
         binarySearchTree.root = root
