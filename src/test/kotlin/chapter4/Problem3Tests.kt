@@ -42,6 +42,11 @@ class Problem3Tests {
         rightRight.leftChild = rightRightLeft
         rightRight.rightChild = rightRightRight
 
+        //                    1
+        //             2               3
+        //          4     5         6      7
+        //        8  9  10  11   12  13  14  15
+
         val lists = binarySearchTree.toLinkedLists()
         assertEquals(listOf(1), lists[0].toList())
         assertEquals(listOf(2, 3), lists[1].toList())
