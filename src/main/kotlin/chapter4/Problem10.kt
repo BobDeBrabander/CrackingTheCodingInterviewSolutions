@@ -19,16 +19,16 @@ object Problem10 {
         var leftChild: BinaryTreeNode? = null
         var rightChild: BinaryTreeNode? = null
 
-        fun treeWalk(): List<Int> {
-            val solution = mutableListOf<Int>()
+        fun treeWalk(): List<String> {
+            val solution = mutableListOf<String>()
             treeWalk(solution)
             return solution
         }
 
-        private fun treeWalk(inOrderList: MutableList<Int>) {
-            leftChild?.treeWalk(inOrderList)
-            inOrderList.add(this.data)
-            rightChild?.treeWalk(inOrderList)
+        private fun treeWalk(inOrderList: MutableList<String>) {
+            inOrderList.add("${this.data}")
+            leftChild?.treeWalk(inOrderList) ?: inOrderList.add("X")
+            rightChild?.treeWalk(inOrderList) ?: inOrderList.add("X")
         }
     }
 }

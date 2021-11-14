@@ -16,6 +16,16 @@ class Problem10Tests {
         assertFalse(bigBinaryTree().containsSubTree(smallerBinaryNonSubTree()))
     }
 
+    @Test //This test shows that null values need to be considered
+    fun `Non-Subtree test small rotated once`() {
+        assertFalse(bigBinaryTree().containsSubTree(superSmallBinaryNonSubTree()))
+    }
+
+    @Test //This case proved you need pre-order traversal instead of in order traversal
+    fun `Tree rotated on one node`() {
+        assertFalse(miniBinaryTree().containsSubTree(miniBinaryTreeRotated()))
+    }
+
     private fun bigBinaryTree(): Problem10.BinaryTree {
         val binaryTree = Problem10.BinaryTree()
         val root = Problem10.BinaryTreeNode(8, 1)
@@ -134,6 +144,64 @@ class Problem10Tests {
         //          12
         //      10      14
         //    9   11  13   15
+
+        return binaryTree
+    }
+
+    private fun miniBinaryTree(): Problem10.BinaryTree {
+        val binaryTree = Problem10.BinaryTree()
+        val root = Problem10.BinaryTreeNode(4, 1)
+        binaryTree.root = root
+
+        val left = Problem10.BinaryTreeNode(2, 2)
+        val right = Problem10.BinaryTreeNode(5, 2)
+        root.leftChild = left
+        left.parent = root
+        root.rightChild = right
+        right.parent = root
+
+        val leftRight = Problem10.BinaryTreeNode(3, 3)
+        left.rightChild = leftRight
+        leftRight.parent = left
+        //            4
+        //        2       5
+        //          3
+
+        return binaryTree
+    }
+
+    private fun miniBinaryTreeRotated(): Problem10.BinaryTree {
+        val binaryTree = Problem10.BinaryTree()
+        val root = Problem10.BinaryTreeNode(4, 1)
+        binaryTree.root = root
+
+        val left = Problem10.BinaryTreeNode(3, 2)
+        val right = Problem10.BinaryTreeNode(5, 2)
+        root.leftChild = left
+        left.parent = root
+        root.rightChild = right
+        right.parent = root
+
+        val leftLeft = Problem10.BinaryTreeNode(2, 3)
+        left.leftChild = leftLeft
+        leftLeft.parent = left
+        //            4
+        //         3       5
+        //      2
+
+        return binaryTree
+    }
+
+    private fun superSmallBinaryNonSubTree(): Problem10.BinaryTree {
+        val binaryTree = Problem10.BinaryTree()
+        val root = Problem10.BinaryTreeNode(13, 1)
+        binaryTree.root = root
+
+        val right = Problem10.BinaryTreeNode(14, 2)
+        root.rightChild = right
+        right.parent = root
+        //          13
+        //             14
 
         return binaryTree
     }
