@@ -1,5 +1,6 @@
 package chapter4
 
+import chapter4.Problem5.isBST
 import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -40,6 +41,11 @@ class Problem5Tests {
     @Test
     fun `Tree is BinarySearchTree`() {
         val valuesTreeWalkOrder = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+        //                    8
+        //             4               10
+        //          2     6         9
+        //        1  3  5   7
+
         val tree = valuesTreeWalkOrder.toBinaryTree()
         assertTrue(tree.isBST())
     }
@@ -47,6 +53,11 @@ class Problem5Tests {
     @Test
     fun `Tree is not BinarySearchTree`() {
         val valuesTreeWalkOrder = listOf(1, 2, 4, 3, 5, 6, 7, 8, 9, 10)
+        //                    8
+        //             3               10
+        //          2     6         9
+        //        1  4  5   7
+
         val tree = valuesTreeWalkOrder.toBinaryTree()
         assertFalse(tree.isBST())
     }
