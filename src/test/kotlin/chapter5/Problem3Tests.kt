@@ -28,6 +28,13 @@ class Problem3Tests {
         runTest(A, expect)
     }
 
+    @Test
+    fun `If we have only 0's we can still make a sequence of 1 1`() {
+        val A = 0       //11110011100111
+        val expect = 1
+        runTest(A, expect)
+    }
+
 
     fun runTest(A: Int, expect: Int) {
         assertEquals(expect, flipToWin(A))

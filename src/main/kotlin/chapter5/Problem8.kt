@@ -18,16 +18,17 @@ object Problem8 {
             //Middle of the line
             for (i in startByte + 1 until endByte) screen[i] = -1
 
+            val startMask = ((-1 shr (startPixel + 24)) and byteMask)
+            val endMask = ((-1 shl (8 - endPixel))) and byteMask
+
             if (startByte == endByte) {
-                screen[startByte] =
-                    ((((-1 shr (startPixel + 24)) and byteMask) and
-                            ((-1 shl (8 - endPixel))) and byteMask)).toByte()
+                screen[startByte] = (startMask and endMask).toByte()
             } else {
                 //Start of the line
-                screen[startByte] = ((-1 ushr (startPixel + 24)) and byteMask).toByte()
+                screen[startByte] = (startMask).toByte()
 
                 //End of the line
-                screen[endByte] = ((-1 shl (8 - endPixel)) and byteMask).toByte()
+                screen[endByte] = (endMask).toByte()
             }
 
         }

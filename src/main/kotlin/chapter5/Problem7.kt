@@ -10,6 +10,6 @@ object Problem7 {
         val maskEvenBits = -1431655766  //10101010101010101010101010101010
         val oddBits = A and maskOddBits
         val evenBits = A and maskEvenBits
-        return (oddBits shl 1) xor (evenBits shr 1)
+        return (oddBits shl 1) or (evenBits shr 1)
     }
 }
