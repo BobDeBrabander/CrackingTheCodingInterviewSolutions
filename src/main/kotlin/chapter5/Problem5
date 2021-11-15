@@ -1,0 +1,11 @@
+This code checks if n is a power of 2
+
+00001000 && 00000111 => 0
+00010000 && 00001111 => 0
+00100000 && 00011111 => 0
+
+but anything else would not lead to this as there would be positive bits coming out of the and operation
+
+00001010 && 00001001 => 00001000 != 0
+
+The leftmost bit would always remain 1 if multiple bits are set to 1 in the original number
