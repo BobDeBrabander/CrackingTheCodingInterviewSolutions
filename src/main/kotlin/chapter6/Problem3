@@ -1,0 +1,7 @@
+It is impossible.
+Note that every domino is always covering exactly one black square and exactly one white square as a domino is always
+covering exactly 2 squares (No diagonal placement or half of the board).
+On a normal board this works just fine as we have the same number of black and white squares.
+On the board given the 2 squares missing would be of the same color (both black or both white) since they are
+on the same diagonal. This would mean we would either have 2 extra black squares or 2 extra whites and no domino
+can pair these up.
