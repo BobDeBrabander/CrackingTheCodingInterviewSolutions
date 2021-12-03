@@ -1,0 +1,9 @@
+So I am assuming each bottle of pills has at least 20 pills.
+
+Every pill bottle gets a number 'i' from 1 upto 20.
+On the scale I put 'i' pills from bottle 'i' for every pill bottle.
+
+The scale will show the sum of 1 upto 20 + 'k' * 0.1
+Where 'k' is the number of the bottle with pills of weight 1.1
+To sum 1 upto 20 we have (n*(n+1))/2 = (20*(1+20)) / 2
+So if we call what is on the scale 'x' then the answer is k = (x - (20*(1+20)) / 2) / 0.1
