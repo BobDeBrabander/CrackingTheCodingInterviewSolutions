@@ -1,0 +1,29 @@
+This is similar to the worst case shifting problem in the chapter itself.
+
+So in this case you divide the 1000 bottles into 11 groups.
+10 groups of 91 and 1 group of 90.
+For the 10 groups of 91 you put all the bottles of that group on to its respective testing paper.
+
+If no paper becomes positive the group that wasn't tested contains the poison.
+Otherwise the positive test-strip belongs to the group that has the poison.
+
+
+Worst case now you will have 91 bottles left and 9 test strips or 90 bottles left and 10 test strips.
+
+Now you continue with the group that has the poison and you divide this into `number of test strips left` + 1 groups.
+
+So now you either have 9 groups of 9 and 1 group of 10 and 9 test strips
+or
+10 groups of 8 and 1 group of 10 and 10 test strips
+
+For the 9 groups of 9 and 1 group of 10 and 9 test strips:
+You put the 9 groups of 9 on their respective testing paper.
+No positive means you have 10 bottles left. You split them into groups of 1, test 9 of them and you find the poison.
+Otherwise you will have 9 bottles left and 8 testing strips and you divide it into groups of 1 again, test 8 of them and you find the poison.
+
+For the 10 groups of 8 and 1 group of 10 and 10 test strips:
+You test the 10 groups of 8. You find the group with the poison. Test remaining bottles in groups of 1 and find the bottle of poison.
+
+
+No matter what path you end up in you will test 3 times in total max.
+1000 -> 91 or 90 -> 8, 9, or 10 -> the bottle
