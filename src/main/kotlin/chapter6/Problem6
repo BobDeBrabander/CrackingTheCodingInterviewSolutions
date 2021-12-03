@@ -1,0 +1,11 @@
+I assume that no non-blue eyed people are supposed to leave.
+If there is no blue-eyed people left I assume that everyone knows that since they know when there is at least one
+
+For i is the amount of people left with blue eyes:
+If i = 0 -> Done
+If i = 1 -> The person with blue eyes sees that all other people have non-blue eyes, and leaves the island
+If i = 2 -> If nobody left yesterday and you can see there is 1 other person with blue eyes that means there is 2 people
+            with blue eyes and you are the other person. The other person will make the same conclusion and you both leave.
+If i = n -> If nobody left for the past n-1 days, and you see n-1 people with blue eyes that means there is at least n people
+            with blue eyes and you are one of them. You all make this conclusion and you all leave on the same day.
+            If you see n people with blue eyes (you don't have blue eyes) you wouldn't leave as you would wait another day.
