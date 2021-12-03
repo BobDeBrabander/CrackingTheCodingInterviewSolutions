@@ -1,0 +1,48 @@
+You have the first egg for the big jumps in floors and the other egg to go single steps from the last floor until it breaks.
+So the question is how big should the big jumps be to balance it with the second egg.
+
+If you make the big jump 10, then you would have at most 9 more floors to check if the first egg breaks with the second egg.
+This means with 100 floors you would have at most 10 + 9 = 19 drops if the floor was set to 99.
+
+If you make the big jump 9, then it would be 11 + 8 = 19. If the floor was set to 98
+If you make the big jump 8, then you this would become 12 + 7 = 19. If the floor was set to 95
+If you make the big jump 7, then it would be 14 + 7 = 21. If the floor was set to 97
+If you make the big jump 11, then it would be 9 + 11 = 20. If the floor was set to 98
+If you make the big jump 12, then it would be 8 + 11 = 19. If the floor was set to 95
+If you make the big jump 13, then it would be 7 + 12 = 19. If the floor was set to 90
+
+
+But it seems that the best thing to do is to change the big jump after being successful.
+Making the big jump the first number that squared is bigger than or equal to the remaining floors to check
+10 * 10 => 100 and 9*9 < 100 => First big jump 10
+
+100 floors -> Big jump 10 -> If the egg breaks here we did 1 big jumps and have 9 more floor to check => 10
+90 floors left -> big jump 10 as 9 * 9 < 90 -> If the egg breaks here we did 2 big jumps and have 9 more floor to check => 10
+80 floors left -> Big jump 9 -> If the egg breaks here we did 3 big jumps and have 8 more floor to check => 12
+71 floors left -> big jump 9 -> If the egg breaks here we did 4 big jumps and have 8 more floor to check => 12
+62 floors left -> big jump 8 -> If the egg breaks here we did 5 big jumps and have 7 more floor to check => 12
+54 floors left -> big jump 8 -> If the egg breaks here we did 6 big jumps and have 7 more floor to check => 13
+46 floors left -> big jump 7 -> If the egg breaks here we did 7 big jumps and have 6 more floor to check => 13
+39 floors left -> big jump 7 -> If the egg breaks here we did 8 big jumps and have 6 more floor to check => 14
+32 floors left -> big jump 6 -> If the egg breaks here we did 9 big jumps and have 5 more floor to check => 14
+26 floors left -> big jump 6 -> If the egg breaks here we did 10 big jumps and have 5 more floor to check => 15
+20 floors left -> big jump 5 -> If the egg breaks here we did 11 big jumps and have 4 more floor to check => 15
+15 floors left -> big jump 4 -> If the egg breaks here we did 12 big jumps and have 3 more floor to check => 15
+11 floors left -> big jump 4 -> If the egg breaks here we did 13 big jumps and have 3 more floor to check => 16
+7 floors left  -> big jump 3 -> If the egg breaks here we did 14 big jumps and have 2 more floor to check => 16
+4 floors left ->  big jump 2 -> If the egg breaks here we did 15 big jumps and have 1 more floor to check => 16
+2 floors left ->  big jump 2 -> If the egg breaks here we did 16 big jumps and have 1 more floor to check => 17
+0 floors left
+
+So this strategy has worst case 17. It seems that we can still do better.
+
+If we set the big jump to some big enough number and make the big jump 1 smaller every jump then we can't do worse than the
+first big jump number.
+To illustrate: 15 + 14 + 13 + 12 + 10 + 9 + 8 + 7 + 6 + 5 + 1 = 100
+This was done in 10 jumps.
+
+Worst case it went wrong before the last eggdrop (before the jump of 1) and it would mean we would have to do a total of 15 egg drops.
+1 failed drop on floor 15 + 14 single drops to find floor 14,
+or 1 drop on floor 15, one failed drop on floor 39, and 13 single drops to find floor 38, etc.
+
+14 + 13 + 12 + 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 94, so it seems that 15 is the first number that this works for.
