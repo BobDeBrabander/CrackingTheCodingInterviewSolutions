@@ -1,0 +1,12 @@
+Probability to make the shot in the first game is P(g1)
+Probability to make the shot in the second game is P(g2)
+
+Making at least 2/3 shots for P(g2)
+= Making 2 shots or making 3 shots
+= P(g2) * P(g2) * ~(Pg2) +  P(g2) * P(g2) * (Pg2)
+= P(g2) * P(g2) * (1 - (Pg2)) +  P(g2) * P(g2) * (Pg2)
+= P(g2) * P(g2) * 1
+
+We want to know for which values P(g2) * P(g2) > P(g1)
+Take the sqrt on both sides we get P(g2) > sqrt(P(g1))
+So If P(g2) > sqrt(P(g1)) then we pick Game 2 and otherwise we pick game 1
