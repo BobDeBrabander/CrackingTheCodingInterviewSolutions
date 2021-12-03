@@ -45,4 +45,4 @@ Worst case it went wrong before the last eggdrop (before the jump of 1) and it w
 1 failed drop on floor 15 + 14 single drops to find floor 14,
 or 1 drop on floor 15, one failed drop on floor 39, and 13 single drops to find floor 38, etc.
 
-14 + 13 + 12 + 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 94, so it seems that 15 is the first number that this works for.
+14 + 13 + 12 + 11 + 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 100, so it seems that 14 is the first number that this works for.

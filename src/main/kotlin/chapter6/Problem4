@@ -3,3 +3,13 @@ pick a different direction they would eventually collide.
 
 This is basically the same question as, what is the probability of flipping a coin and it landing on tails or heads every single time.
 This is just (1/2)^3 for the starting question or (1/2)^n for the follow-up question.
+
+The chance on an actual collision us thus
+1 - same direction =
+1 - all clockwise - all anti-clockwise
+
+All clockwise = (1/2)^n
+All anti-clockwise = (1/2)^n
+
+Same direction is thus
+1 - (1/2)^n - (1/2)^n = 1 - (1/2)^(n-1)

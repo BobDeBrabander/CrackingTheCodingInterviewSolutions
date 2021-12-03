@@ -1,12 +1,18 @@
-Probability to make the shot in the first game is P(g1)
-Probability to make the shot in the second game is P(g2)
-
-Making at least 2/3 shots for P(g2)
+Making at least 2/3 shots
 = Making 2 shots or making 3 shots
-= P(g2) * P(g2) * ~(Pg2) +  P(g2) * P(g2) * (Pg2)
-= P(g2) * P(g2) * (1 - (Pg2)) +  P(g2) * P(g2) * (Pg2)
-= P(g2) * P(g2) * 1
+= Missing shot 1 or missing shot 2 or missing shot 3 or missing no shot
+= (1-p) * p * p + p * (1-p) * p + p * p * (1-p) + p * p * p
+= 3 * (1-p) * p^2 + p^3
+= 3p^2 - 3p^3 + p^3
 
-We want to know for which values P(g2) * P(g2) > P(g1)
-Take the sqrt on both sides we get P(g2) > sqrt(P(g1))
-So If P(g2) > sqrt(P(g1)) then we pick Game 2 and otherwise we pick game 1
+To now know which game to play we need to solve:
+p > 3p^2 - 2p^3
+1 > 3p - 2p^2
+2p^2 - 3p + 1 > 0
+(2p - 1)(p - 1) > 0
+
+Both terms must be positive or both must be negative but p < 1 as it's probability
+so both need to be negative. So p < 1 and 2p < 1, thus p < 0.5
+
+So if 0 < p < 0.5 we play game 1 and otherwise game 2
+On p = 0, 0.5 or 1 it doesn't matter what we play as probability becomes equal
