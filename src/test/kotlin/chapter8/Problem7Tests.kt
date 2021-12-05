@@ -14,6 +14,7 @@ class Problem7Tests {
         assertThat(output).containsExactlyInAnyOrderElementsOf(expect)
     }
 
+    //Test for problem 8
     @Test
     fun `duplicate test`(){
         val inputString = "aab"

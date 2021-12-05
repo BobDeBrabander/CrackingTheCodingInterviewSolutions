@@ -2,6 +2,7 @@ package chapter8
 
 object Problem7 {
 
+    //This also solves problem8
     fun allPermutationsOf(inputString: String) : Set<String>{
         return allPermutationsOf("", inputString)
     }
