@@ -8,7 +8,7 @@ object Problem13 {
         val width: Int,
         val height: Int,
         val depth: Int
-    ) : Comparable<Box>{
+    ) : Comparable<Box> {
         fun strictlySmallerThan(other: Box): Boolean {
             return this.depth < other.depth && this.height < other.height && this.width < other.width
         }
@@ -18,18 +18,23 @@ object Problem13 {
         }
     }
 
-    fun largestStack(boxes: List<Box>) : Int{
+    fun largestStack(boxes: List<Box>): Int {
         val sortedBoxes = boxes.sorted()
-        return largestStack(-1, sortedBoxes, 0)
+        return largestStack(sortedBoxes, -1, HashMap())
     }
 
-    private fun largestStack(lastPick: Int, boxes: List<Box>, currentHeight: Int) : Int{
-        var max = currentHeight
-        for (i in lastPick+1 until boxes.size){
-            if (lastPick == -1 || boxes[i].strictlySmallerThan(boxes[lastPick])){
-                max = max(max, largestStack(i, boxes, currentHeight+boxes[i].height))
+    private fun largestStack(boxes: List<Box>, lastPick: Int, stackMap: HashMap<Int, Int>): Int {
+        if (stackMap.containsKey(lastPick)) return stackMap[lastPick]!!
+        var maxHeight = 0
+        for (i in lastPick + 1 until boxes.size) {
+            if (lastPick == -1 || boxes[i].strictlySmallerThan(boxes[lastPick])) {
+                val height = largestStack(boxes, i, stackMap)
+                maxHeight = max(maxHeight, height)
             }
         }
-        return max
+        val lastBoxHeight = if (lastPick == -1) 0 else boxes[lastPick].height
+        maxHeight += lastBoxHeight
+        if (lastPick != -1) stackMap[lastPick] = maxHeight
+        return maxHeight
     }
 }

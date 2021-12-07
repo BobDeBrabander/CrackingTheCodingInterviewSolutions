@@ -1,5 +1,8 @@
 package chapter8
 
+import kotlin.math.max
+import kotlin.math.min
+
 object Problem3 {
 
     //Assumption values are distinct
@@ -24,7 +27,25 @@ object Problem3 {
         }
     }
 
-    //If values are not distinct you can't do better than checking all elements
-    //Example 0 1 3 3 3 4 6 6 7 8
-    //This list has 0, 1, 3, and 6 has magic indexes
+    //If values are not distinct you can't do better than checking almost all elements, we can skip some and recursively
+    //search the left and right side
+    fun findMagicIndexWithDuplicates(list: List<Int>) : Int{
+        return findMagicIndexWithDuplicates(list, 0, list.size-1)
+    }
+
+    private fun findMagicIndexWithDuplicates(list: List<Int>, start: Int, end: Int) : Int{
+        if (start > end) return -1
+        val mid = (start + end)/2
+        if (list[mid] == mid) return mid
+
+        val leftIndex = min(mid-1, list[mid])
+        val left = findMagicIndexWithDuplicates(list, start, leftIndex)
+        if (left >= 0) return left
+
+        val rightIndex = max(mid+1, list[mid])
+        val right = findMagicIndexWithDuplicates(list, rightIndex, end)
+        if (right >= 0) return right
+
+        return -1
+    }
 }
