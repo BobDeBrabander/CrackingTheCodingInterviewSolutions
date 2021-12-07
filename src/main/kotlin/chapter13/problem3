@@ -1,0 +1,8 @@
+Final is used to control whether a variable, method, or class is changeable
+    variable (primitive): value of variable can't change
+    variable (reference): reference variable can't point to any other object on the heap
+    method: method can not be overridden
+    class: class can not be inherited
+Finally is used to declare a codeblock that always needs to be executed after a try/catch block
+Finalize is a method called by the garbage collector once no more references exist to an object. This gets called
+right before destroying the object.

@@ -1,0 +1,2 @@
+If A inherits from class B then A needs to be able to call the constructor of class B.
+If B's constructor is private this would only be possible if A is in an inner class of B.

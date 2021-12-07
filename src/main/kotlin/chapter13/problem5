@@ -1,0 +1,6 @@
+HashMap: O(1) lookup and insertions -> Implemented by array of linked lists
+TreeMap: O(log N) lookup and insertions -> RedBlack trees
+LinkedHashMap: O(1) lookup and insertions. Keys are ordered by their insertion order. Implemented with doubly-linked buckets.
+
+If insertion order is important use LinkedHashMap. If ordering/ keeping things ordered is important, use TreeMap.
+Otherwise (most of the cases) use HashMap.
