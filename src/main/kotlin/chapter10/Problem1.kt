@@ -8,7 +8,7 @@ object Problem1 {
         var indexB = B.size-1
         var indexA = A.size-B.size-1
         var pointerFill = A.size-1
-        while(pointerFill >= 0) {
+        while(indexB >= 0) {
             when {
                 indexB < 0 -> {
                     A[pointerFill] = A[indexA]

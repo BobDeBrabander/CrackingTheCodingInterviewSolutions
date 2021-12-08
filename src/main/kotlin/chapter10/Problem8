@@ -1,2 +1,2 @@
-First I would sort the array in place.
-Then I would traverse it in order and print every duplicate. This would just be adjacent numbers with the same value.
+We can make a bitvector with 32000 bits. Every bit corresponds to an integer.
+If we see an integer with a bit that is already set, it is a duplicate and we print it
