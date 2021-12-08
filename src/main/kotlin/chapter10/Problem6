@@ -1,0 +1,8 @@
+This is a very big file. So it should be a very efficient algorithm.
+BubbleSort and SelectionSort have terrible runtimes
+MergeSort would use a lot of memory
+We don't know anything about the string lengths so RadixSort is not a good option either
+
+This leaves us with QuickSort that has a memory usage of O(log(n)). The worst case running time is O(n^2) but the average
+is O(n log(n)). If we do a randomized version of the quicksort algorithm the chances of hitting the O(n^2) worst case are very small.
+My choice would go to quicksort.
