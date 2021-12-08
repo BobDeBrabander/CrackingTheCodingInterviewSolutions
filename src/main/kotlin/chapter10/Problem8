@@ -1,0 +1,2 @@
+First I would sort the array in place.
+Then I would traverse it in order and print every duplicate. This would just be adjacent numbers with the same value.
