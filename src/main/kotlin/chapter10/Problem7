@@ -1,0 +1,16 @@
+1GB of memory = 1 GigaByte = 1024 MegaByte = 1024 * 1024 KiloByte = 1024 * 1024 * 1024 Bytes = 1073741824 Bytes = 8589934592 bits
+To represent one non-negative integer we need 31 bits
+
+So this memory could hold 8589934592 / 31 ~ 277,094,664 integers < 4,000,000,000
+
+So this memory is clearly not enough to keep track of all the integers given
+
+I think what we can do is some adapted version of Radix Sort. We don't actually need to sort these integers.
+First we count how many digits end on 1, 2, 3, etc. This is 10 different counters.
+We write down the least common ending digit.
+
+Then we would pass through all integers again but we keep count only of integers ending with the least common digit.
+This time we count not the last digit but the last to last digit's occurrences.
+
+We keep doing this for all digits until at any point we have 0 occurrences for a digit
+we can just write this digit + the least common ending and we found our integer that doesn't occur in this set.
