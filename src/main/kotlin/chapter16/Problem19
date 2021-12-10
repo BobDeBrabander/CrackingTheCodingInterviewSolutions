@@ -1,0 +1,3 @@
+For every cell have a boolean if it is visited.
+Then walk over the grid, for every 0 cell that is unvisited you execute a flood fill (DFS) that keeps track of the size.
+You return these results at the end.
