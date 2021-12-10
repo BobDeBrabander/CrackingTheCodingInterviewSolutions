@@ -1,0 +1,4 @@
+This is a typical trie-tree problem.
+You store all the words in a trie tree.
+Then for the corresponding letters to digits you traverse the trie down. The result is all the word endings you find
+after traversing all the digits.
