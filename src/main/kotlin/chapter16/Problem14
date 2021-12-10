@@ -1,0 +1,25 @@
+
+Line(startY,slope,isVertical,startX){
+    pointsOnLine = 0
+    countAllPointsOnLine(points: List<Point>){
+        pointsOnLine = points.count{ hasPoint(it) }
+    }
+    hasPoint(point: Point) : Boolean {
+        if (isVertical) point.x == startX
+        else (startY + slope*point.x) == point.y
+    }
+}
+
+foundLines = mutableSetOf<Line>
+points = listOf<Point>
+
+for (i in points.indices) {
+    for (j in i+1 until points.size){
+        newLine = a line through point[i] and point[j]
+        if (foundLines.contains(newLine)) continue
+        newLine.countAllPointsOnLine(points)
+        foundLines.add(newLine)
+    }
+}
+
+return foundLines.maxBy{it.pointsOnLine}
