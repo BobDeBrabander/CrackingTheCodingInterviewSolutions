@@ -22,7 +22,7 @@ object Problem6 {
                 i1++
                 continue
             }
-            if (abs(sl1[i1+1]-sl2[i2]) <= abs(sl1[i1]-sl2[i2+1])){
+            if (sl1[i1] <= sl2[i2]){
                 i1++
             } else {
                 i2++

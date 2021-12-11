@@ -2,6 +2,10 @@ package chapter16
 
 object Problem4 {
 
+    //This code could be made more generic with a generic check function that has:
+    //  a starting position and an rowIncrement, columnIncrement for which cell to check next
+    //  if all the checked cells are the same as the first, and the first not being _, then we have a winner
+
     //Assuming this is a board of 3x3 with all characters either being X, O, or _
     fun someoneHasWon(ticTacToeBoard: List<List<Char>>) : Boolean {
         for (row in 0..2) {

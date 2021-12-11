@@ -36,4 +36,12 @@ class Problem7Tests {
         val expect = 8
         assertThat(Problem7.maxNumberOf(num1, num2)).isEqualTo(expect)
     }
+
+    @Test
+    fun `overflow test`() {
+        val num1 = Int.MAX_VALUE
+        val num2 = Int.MIN_VALUE
+        val expect = Int.MAX_VALUE
+        assertThat(Problem7.maxNumberOf(num1, num2)).isEqualTo(expect)
+    }
 }

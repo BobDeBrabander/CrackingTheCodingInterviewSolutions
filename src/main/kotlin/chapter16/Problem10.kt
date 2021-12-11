@@ -1,7 +1,5 @@
 package chapter16
 
-import java.util.TreeSet
-
 object Problem10 {
 
     data class Person(val birth: Int, val death: Int) : Comparable<Person> {
@@ -10,18 +8,20 @@ object Problem10 {
         }
     }
 
-    fun yearMostPeopleAlive(list: List<Person>) : Int {
-        val peopleGroupedByBirthYear = list.groupBy { it.birth }
-        val queueByDeathYear = TreeSet<Person>()
+    fun yearMostPeopleAlive(list: List<Person>, minYear: Int, maxYear: Int): Int {
+        var deltas = MutableList<Int>(maxYear - minYear + 2) { 0 }
+        list.forEach {
+            deltas[it.birth - minYear]++
+            deltas[it.death - minYear + 1]--
+        }
+        var peopleAlive = 0
         var maxPeopleAlive = 0
         var maxPeopleAliveYear = -1
-
-        for (i in 1900..2000){
-            queueByDeathYear.addAll(peopleGroupedByBirthYear[i] ?: listOf())
-            while(queueByDeathYear.firstOrNull()?.death ?: Int.MIN_VALUE > i) queueByDeathYear.pollFirst()
-            if (maxPeopleAlive < queueByDeathYear.size) {
-                maxPeopleAlive = queueByDeathYear.size
-                maxPeopleAliveYear = i
+        for (i in deltas.indices) {
+            peopleAlive += deltas[i]
+            if (peopleAlive > maxPeopleAlive) {
+                maxPeopleAlive = peopleAlive
+                maxPeopleAliveYear = minYear + i
             }
         }
         return maxPeopleAliveYear

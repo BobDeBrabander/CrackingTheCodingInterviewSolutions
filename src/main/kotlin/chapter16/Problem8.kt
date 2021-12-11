@@ -1,20 +1,15 @@
 package chapter16
 
+import kotlin.math.abs
+
 object Problem8 {
 
     fun englishInt(n: Int) : String{
-        if (n == 0) return "Zero"
-        if (n == 11) return "Eleven"
-        if (n == 12) return "Twelve"
-        if (n == 13) return "Thirteen"
-        if (n == 14) return "Fourteen"
-        if (n == 15) return "Fifteen"
-        if (n == 16) return "Sixteen"
-        if (n == 17) return "Seventeen"
-        if (n == 18) return "Eighteen"
-        if (n == 19) return "Nineteen"
+        if (n < 0) return "Negative " + englishInt(-1*n)
+        if (n < 20) return englishUpto20(n)
 
-        var num = n
+        var result = ""
+        var num = abs(n)
         val billions = num / 1000000000
         num %= 1000000000
         val millions = num / 1000000
@@ -22,7 +17,7 @@ object Problem8 {
         val thousands = num / 1000
         num %= 1000
 
-        var result = ""
+
         if (billions > 0) result += englishUpto1000(billions) + "Billion "
         if (millions > 0) result += englishUpto1000(millions) + "Million "
         if (thousands > 0) result += englishUpto1000(thousands) + "Thousand "
@@ -31,15 +26,7 @@ object Problem8 {
     }
 
     private fun englishUpto1000(n: Int) : String {
-        if (n == 11) return "Eleven "
-        if (n == 12) return "Twelve "
-        if (n == 13) return "Thirteen "
-        if (n == 14) return "Fourteen "
-        if (n == 15) return "Fifteen "
-        if (n == 16) return "Sixteen "
-        if (n == 17) return "Seventeen "
-        if (n == 18) return "Eighteen "
-        if (n == 19) return "Nineteen "
+        if (n < 20) return englishUpto20(n)
 
         var num = n
         val hundred = num/100
@@ -48,9 +35,9 @@ object Problem8 {
         num %= 10
 
         var answer = ""
-        if (hundred > 0) answer += englishUpto10(hundred) + "Hundred "
+        if (hundred > 0) answer += englishUpto20(hundred) + "Hundred "
         if (tens > 0) answer += englishMultiplesOf10(tens)
-        if (num > 0) answer += englishUpto10(num)
+        if (num > 0) answer += englishUpto20(num)
         return answer
     }
 
@@ -68,17 +55,7 @@ object Problem8 {
         }
     }
 
-    private fun englishUpto10(n: Int) : String{
-        return when(n){
-            1 -> "One "
-            2 -> "Two "
-            3 -> "Three "
-            4 -> "Four "
-            5 -> "Five "
-            6 -> "Six "
-            7 -> "Seven "
-            8 -> "Eight "
-            else -> "Nine "
-        }
-    }
+    var smalls = listOf("Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
+    "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen")
+    private fun englishUpto20(n: Int) : String = smalls[n]
 }

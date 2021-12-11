@@ -16,7 +16,7 @@ class Problem10Tests {
             Problem10.Person(1935, 1936),
         )
 
-        val result = Problem10.yearMostPeopleAlive(people)
+        val result = Problem10.yearMostPeopleAlive(people, 1900, 2000)
         val expect = 1935
         assertThat(result).isEqualTo(expect)
     }
