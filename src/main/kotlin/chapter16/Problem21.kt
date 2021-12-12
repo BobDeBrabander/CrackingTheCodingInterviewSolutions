@@ -8,11 +8,9 @@ object Problem21 {
         val diff = sum2 - sum1 //How much to add to l1 to make it l2
         if (diff % 2 != 0) return null //We can't make the sums the same as they differ an odd amount
         val diffToAddTo1 = diff / 2
-        val hs1 = HashSet<Int>()
-        hs1.addAll(l1)
         val hs2 = HashSet<Int>()
         hs2.addAll(l2)
-        hs1.forEach {
+        l1.forEach {
             if (hs2.contains(diffToAddTo1 + it)) return it to (diffToAddTo1 + it)
         }
         return null

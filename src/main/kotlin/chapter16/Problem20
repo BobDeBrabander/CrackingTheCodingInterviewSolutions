@@ -2,3 +2,8 @@ This is a typical trie-tree problem.
 You store all the words in a trie tree.
 Then for the corresponding letters to digits you traverse the trie down. The result is all the word endings you find
 after traversing all the digits.
+
+This can be optimized further.
+Instead of making the trie build on letters we can make it build on numbers. Then for every edge we take we wouldn't have a
+word. We would have a sequence of digits belonging to a list of words. Then when the query comes with a list of numbers
+we just have to traverse the trie and if it's a word ending return the list of words on that node.
