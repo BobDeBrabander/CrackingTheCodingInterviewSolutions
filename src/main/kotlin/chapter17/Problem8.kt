@@ -20,7 +20,7 @@ object Problem8 {
     fun circusTower(towers: List<Tower>): Int {
         val sortedTowers = towers.sorted()
         var tallest = 0
-        val memo = mutableMapOf<Int, Int>()
+        val memo = HashMap<Int, Int>()
         for (i in sortedTowers.indices) {
             tallest = max(tallest, tallestTower(sortedTowers, i, memo))
         }

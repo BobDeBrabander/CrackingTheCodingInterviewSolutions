@@ -4,7 +4,7 @@ object Problem5 {
 
     fun longestSubArray(list: List<Char>): Pair<Int, Int>? {
         var deltaList = MutableList(list.size) { 0 }
-        val indexMap = mutableMapOf<Int, MutableList<Int>>()
+        val indexMap = HashMap<Int, MutableList<Int>>()
         indexMap[0] = mutableListOf(-1)
 
         for (i in list.indices) {
