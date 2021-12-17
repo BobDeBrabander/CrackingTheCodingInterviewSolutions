@@ -17,4 +17,18 @@ object Problem16 {
         memo[index] = max(pick, dontPick)
         return memo[index]!!
     }
+
+    fun masseuseLessSpace(list: List<Int>): Int {
+        var oneAway = 0
+        var twoAway = 0
+        for (i in list.lastIndex downTo 0){
+            val bestWith = list[i] + twoAway
+            val bestWithout = oneAway
+            val current = max(bestWith, bestWithout)
+
+            twoAway = oneAway
+            oneAway = current
+        }
+        return oneAway
+    }
 }
