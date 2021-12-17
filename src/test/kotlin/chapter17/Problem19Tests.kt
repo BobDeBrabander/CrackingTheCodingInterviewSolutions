@@ -28,4 +28,15 @@ class Problem19Tests {
         val expect = 9
         assertThat(result).isEqualTo(expect)
     }
+
+
+    //---------------------PART TWO -----------------
+
+    @Test
+    fun `simple test - part two - 1`() {
+        val list = listOf(1, 2, 3, 4, 6, 7, 8)
+        val result = Problem19.missingTwo(list)
+        val expect = listOf(5, 9)
+        assertThat(result).isEqualTo(expect)
+    }
 }
