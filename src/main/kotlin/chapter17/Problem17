@@ -1,0 +1,2 @@
+Make a trie tree of the list of small strings.
+Iterate over the big string and for every char check if you can find any of the small strings using the trie.
