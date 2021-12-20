@@ -2,3 +2,6 @@ First make a graph
 Every word is a node in the graph
 nodes are connected if they are one letter away and the same length
 then just do a dijkstra and retain the path you take to get to the other word
+
+Solutions:
+Use a bi-directional search instead so that you find a path faster
