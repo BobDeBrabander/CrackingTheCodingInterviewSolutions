@@ -37,5 +37,7 @@ object Problem24 {
             }
         }
         return best
+
+        //Faster solution exists taking it from N^4 to N^3 using the maxSubArray problem
     }
 }
