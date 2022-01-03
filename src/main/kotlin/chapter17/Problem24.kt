@@ -5,7 +5,8 @@ object Problem24 {
     data class Cell(val row: Int, val col: Int)
     data class SubMatrix(val startCell: Cell, val endCell: Cell)
 
-    fun maxSubMatrix(matrix: List<List<Int>>): SubMatrix? {
+    //Assumption: At least 1 cell in the matrix
+    fun maxSubMatrix(matrix: List<List<Int>>): SubMatrix {
         val sumUnder = MutableList(matrix.size) { MutableList(matrix.size) { 0 } }
         for (row in matrix.lastIndex downTo 0) {
             for (col in matrix.lastIndex downTo 0) {
@@ -17,8 +18,8 @@ object Problem24 {
 
             }
         }
-        var bestSum = Integer.MIN_VALUE
-        var best: SubMatrix? = null
+        var bestSum = matrix[0][0]
+        var best = SubMatrix(Cell(0, 0), Cell(0, 0))
         for (rowStart in matrix.indices) {
             for (colStart in matrix.indices) {
                 for (rowEnd in rowStart until matrix.size) {
